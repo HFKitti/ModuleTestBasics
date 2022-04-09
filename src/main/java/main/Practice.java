@@ -143,13 +143,20 @@ public class Practice {
 
         int days = 0;
 
-        for (int i = startRabbitValue; i <= requiredRabbits; i++) {
-            i *= 2;
+        while (requiredRabbits > startRabbitValue) {
+            startRabbitValue *= 2;
             days++;
+            if (requiredRabbits == startRabbitValue) {
+                break;
+            }
         }
+        if (requiredRabbits <= startRabbitValue) {
+            days++;
 
+        }
         return days;
     }
+
 
     /**
      * 5. feladat - 3p
@@ -193,27 +200,14 @@ public class Practice {
      * @return a megnyert csaták darabszáma
      */
     public static int countVictories(int[] battles) {
-       /* int victory = 0;
-
-        for (int i = battles[0]; i < battles[battles.length-1]; i++) {
-            if( i < 0){
-
-            }else if ( i >0){
-                 victory++;
-            }
-        }*/
 
         int victory = 0;
-        for (int i = 0; i < battles[battles.length - 1]; i++) {
+
+        for (int i = 0; i < battles.length; i++) {
             if (battles[i] > 0) {
                 victory++;
             }
         }
-
-        // for ( int victory : battles){
-        //     if(victory >= )
-        //}
-
         return victory;
     }
 
@@ -232,14 +226,14 @@ public class Practice {
      */
     public static boolean isInAscendingOrder(int[] heights) {
 
-        // for (int i = 0; i < heights.length - 1 ; i++) {
+
         boolean sorted = true;
 
-        for (int j = 0; j < heights.length - 1; j++) {
-            if (heights[j] > heights[j + 1]) {
-                int temp = heights[j];
-                heights[j] = heights[j + 1];
-                heights[j + 1] = temp;
+        for (int i = 0; i < heights.length - 1; i++) {
+            if (heights[i] > heights[i + 1]) {
+                int temp = heights[i];
+                heights[i] = heights[i + 1];
+                heights[i + 1] = temp;
                 sorted = false;
             }
 
@@ -271,6 +265,15 @@ public class Practice {
      * @return az eredeti üzenet karakterei fordított sorrendben
      */
     public static char[] reverseMessage(char[] message) {
+
+        char[] clone = message.clone();
+
+        for (int i = 0; i < message.clone().length - 1; i++) {
+
+
+        }
+
+
         return null;
     }
 
@@ -303,6 +306,8 @@ public class Practice {
      * @return a legtöbb veszteséget tartalmazó hónap index-száma
      */
     public static int getWorstMonthIndex(int[][] lossesPerMonths) {
+
+
         return -1;
     }
 
@@ -333,7 +338,7 @@ public class Practice {
 
     }
 
-    // --------------------------------------------------------------------------------------
+// --------------------------------------------------------------------------------------
 
     /**
      * Bónusz feladat - 5p
