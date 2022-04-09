@@ -311,8 +311,10 @@ public class Practice {
         int sum = 0;
 
         for (int i = 0; i < lossesPerMonths.length; i++) {
+            for (int j = 0; j < lossesPerMonths[i].length; j++) {
+                int loss += lossesPerMonths[i][j];
 
-
+            }
         }
 
 
@@ -404,6 +406,11 @@ public class Practice {
      * @return fognak-e harcolni
      */
     public static boolean willTheyFight(int s1, int t1, int s2, int t2) {
+
+
+       // while (true){
+
+
         return false;
     }
 
