@@ -75,7 +75,12 @@ public class Practice {
      * @return az elvárt szint
      */
     public static double countRequirement(int[] scores) {
-        return 0.0;
+
+      double atlag =  ((scores[0] + scores[scores.length-1])/2d);
+
+      return atlag;
+
+
     }
 
     /**
@@ -96,6 +101,14 @@ public class Practice {
      * @return a hajó harcképes-e
      */
     public static boolean isShipAbleToFight(int shieldCharge, int weaponCharge) {
+
+        double atlag =  ((shieldCharge + weaponCharge) / 2d);
+
+        if(shieldCharge > 20 && weaponCharge > 20){
+          if (atlag > 50){
+                return true;
+            }
+        }
         return false;
     }
 
