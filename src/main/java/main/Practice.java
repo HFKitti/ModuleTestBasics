@@ -268,13 +268,14 @@ public class Practice {
 
         char[] clone = message.clone();
 
-        for (int i = 0; i < message.clone().length - 1; i++) {
-
+        for (char i = 0; i < clone.length / 2 ; i++) {
+            char temp = clone[i];
+           clone[i] =  clone[clone.length -1-i];
+            clone[clone.length -1-i] = temp;
 
         }
 
-
-        return null;
+        return clone;
     }
 
     /**
@@ -307,6 +308,16 @@ public class Practice {
      */
     public static int getWorstMonthIndex(int[][] lossesPerMonths) {
 
+        int sum = 0;
+
+        for (int i = 0; i < lossesPerMonths.length; i++) {
+
+
+        }
+
+
+
+
 
         return -1;
     }
@@ -335,6 +346,19 @@ public class Practice {
      * @param shipPowers az űrhajók ereje
      */
     public static void sortShipsByPower(String[] shipNames, int[] shipPowers) {
+
+
+        for (int i = 0; i < shipPowers.length - 1; i++) {
+            if (shipPowers[i] > shipPowers[i + 1]) {
+                int temp = shipPowers[i];
+                shipPowers[i] = shipPowers[i + 1];
+                shipPowers[i + 1] = temp;
+
+            }
+            return ;
+        }
+
+
 
     }
 
