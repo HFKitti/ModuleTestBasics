@@ -1,5 +1,7 @@
 package main;
 
+import java.util.Arrays;
+
 /**
  * A technológia fejlődésének hála az emberiség képessé vált az űr meghódítására
  * - és meg is tette azt: számtalan bolygót fedezett fel, és gyarmatosított.
@@ -308,20 +310,25 @@ public class Practice {
      */
     public static int getWorstMonthIndex(int[][] lossesPerMonths) {
 
-        int sum = 0;
+
+        int maxloss = 0;
+        int index = 0;
 
         for (int i = 0; i < lossesPerMonths.length; i++) {
+            int sum = 0;
             for (int j = 0; j < lossesPerMonths[i].length; j++) {
-                int loss += lossesPerMonths[i][j];
+                sum += lossesPerMonths[i][j];
 
             }
+            if (sum > maxloss) {
+                maxloss = sum;
+                index = i;
+
+            }
+
         }
+        return index;
 
-
-
-
-
-        return -1;
     }
 
     /**
@@ -350,14 +357,24 @@ public class Practice {
     public static void sortShipsByPower(String[] shipNames, int[] shipPowers) {
 
 
-        for (int i = 0; i < shipPowers.length - 1; i++) {
-            if (shipPowers[i] > shipPowers[i + 1]) {
-                int temp = shipPowers[i];
-                shipPowers[i] = shipPowers[i + 1];
-                shipPowers[i + 1] = temp;
+        for (int i = 0; i < shipPowers.length ; i++) {
+            for(int j = 0; j < shipPowers.length - i - 1; j++) {
+                if (shipPowers[j] < shipPowers[j + 1]) {
+                    int temp = shipPowers[j];
+                    shipPowers[j] = shipPowers[j + 1];
+                    shipPowers[j + 1] = temp;
 
+                    String csere = shipNames[j];
+                    shipNames[j] = shipNames[j + 1];
+                    shipNames[j + 1] = csere;
+
+                }
             }
-            return ;
+
+        }
+
+        for (int i = 0; i < shipPowers.length; i++) {
+
         }
 
 
@@ -408,7 +425,9 @@ public class Practice {
     public static boolean willTheyFight(int s1, int t1, int s2, int t2) {
 
 
-       // while (true){
+      //  while (s1 *= t1 && s2 *= t2  ){
+       //     if ()
+        //}
 
 
         return false;
