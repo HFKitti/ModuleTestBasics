@@ -55,7 +55,6 @@ public class Practice {
         }
 
 
-
     }
 
     /**
@@ -76,9 +75,9 @@ public class Practice {
      */
     public static double countRequirement(int[] scores) {
 
-      double atlag =  ((scores[0] + scores[scores.length-1])/2d);
+        double atlag = ((scores[0] + scores[scores.length - 1]) / 2d);
 
-      return atlag;
+        return atlag;
 
 
     }
@@ -102,10 +101,10 @@ public class Practice {
      */
     public static boolean isShipAbleToFight(int shieldCharge, int weaponCharge) {
 
-        double atlag =  ((shieldCharge + weaponCharge) / 2d);
+        double atlag = ((shieldCharge + weaponCharge) / 2d);
 
-        if(shieldCharge > 20 && weaponCharge > 20){
-          if (atlag > 50){
+        if (shieldCharge > 20 && weaponCharge > 20) {
+            if (atlag > 50) {
                 return true;
             }
         }
@@ -144,7 +143,7 @@ public class Practice {
 
         int days = 0;
 
-        for (int i = startRabbitValue; i <= requiredRabbits ; i++) {
+        for (int i = startRabbitValue; i <= requiredRabbits; i++) {
             i *= 2;
             days++;
         }
@@ -171,7 +170,7 @@ public class Practice {
 
         int sum = 0;
 
-        for ( int armyOfPlanet : armyOfPlanets ) {
+        for (int armyOfPlanet : armyOfPlanets) {
             sum += armyOfPlanet;
         }
 
@@ -194,7 +193,28 @@ public class Practice {
      * @return a megnyert csaták darabszáma
      */
     public static int countVictories(int[] battles) {
-        return -1;
+       /* int victory = 0;
+
+        for (int i = battles[0]; i < battles[battles.length-1]; i++) {
+            if( i < 0){
+
+            }else if ( i >0){
+                 victory++;
+            }
+        }*/
+
+        int victory = 0;
+        for (int i = 0; i < battles[battles.length - 1]; i++) {
+            if (battles[i] > 0) {
+                victory++;
+            }
+        }
+
+        // for ( int victory : battles){
+        //     if(victory >= )
+        //}
+
+        return victory;
     }
 
     /**
@@ -211,8 +231,23 @@ public class Practice {
      * @param heights a kadétok magassága
      */
     public static boolean isInAscendingOrder(int[] heights) {
-        return false;
+
+        // for (int i = 0; i < heights.length - 1 ; i++) {
+        boolean sorted = true;
+
+        for (int j = 0; j < heights.length - 1; j++) {
+            if (heights[j] > heights[j + 1]) {
+                int temp = heights[j];
+                heights[j] = heights[j + 1];
+                heights[j + 1] = temp;
+                sorted = false;
+            }
+
+        }
+
+        return sorted;
     }
+
 
     /**
      * 8. feladat - 4p
